@@ -16,6 +16,16 @@
             <message key="methodlimit" value="Man, only {0} methods allowed." />
         </module>
         
+        <module name="VariableDeclarations">
+            <property name="max" value="1" />
+            <message key="VariableDeclaration" value="Man, only {0} declarations allowed." />
+        </module>
+        
+        <module name="net.sf.eclipsecs.sample.checks.LoopingStatementsCheck">
+            <property name="max" value="1" />
+            <message key="LoopingStatements" value="Man, only {0} looping statements allowed." />
+        </module>
+        
         <!-- <module name="LineLength"> <property name="max" value="${maxLineLength}"/> </module> -->
 
         <module name="Regexp">
