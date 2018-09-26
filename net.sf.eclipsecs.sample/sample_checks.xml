@@ -31,6 +31,17 @@
             <message key="CastsCount" value="Man, Number of casts: {0}." />
         </module>
         
+        <module name="net.sf.eclipsecs.sample.checks.ExpressionsCheck">
+            <property name="max" value="1" />
+            <message key="ExpressionsCount" value="Man, Number of expressions: {0}." />
+        </module>
+        
+        <module name="net.sf.eclipsecs.sample.checks.HalsteadEffortCheck">
+        </module>
+        
+        <module name="net.sf.eclipsecs.sample.checks.MaintainabilityIndexCheck">
+        </module>
+        
         <!-- <module name="LineLength"> <property name="max" value="${maxLineLength}"/> </module> -->
 
         <module name="Regexp">

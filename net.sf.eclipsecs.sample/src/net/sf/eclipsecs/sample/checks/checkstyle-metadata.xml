@@ -39,5 +39,23 @@
             </property-metadata>
         </rule-metadata>
         
+        <rule-metadata name="%ExpressionsCheck.name" internal-name="Expressions" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.ExpressionsCheck" />
+            <description>%ExpressionsCheck.desc</description>
+            <property-metadata name="max" datatype="Integer" default-value="0">
+                <description>The maximum number of Expressions.</description>
+            </property-metadata>
+        </rule-metadata>
+        
+        <rule-metadata name="%HalsteadEffortCheck.name" internal-name="HalsteadEffort" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.HalsteadEffortCheck" />
+            <description>%HalsteadEffortCheck.desc</description>
+        </rule-metadata>
+        
+        <rule-metadata name="%MaintainabilityIndexCheck.name" internal-name="MaintainabilityIndex" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.MaintainabilityIndexCheck" />
+            <description>%MaintainabilityIndexCheck.desc</description>
+        </rule-metadata>
+        
     </rule-group-metadata>
 </checkstyle-metadata>
