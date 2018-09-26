@@ -15,7 +15,7 @@
             <quickfix classname="net.sf.eclipsecs.sample.checks.MethodLimitQuickfix" />
         </rule-metadata>
         
-        <rule-metadata name="VariableDeclarations" internal-name="VariableDeclarations" parent="TreeWalker">
+        <rule-metadata name="%VariableDeclarations.name" internal-name="VariableDeclarations" parent="TreeWalker">
             <alternative-name internal-name="net.sf.eclipsecs.sample.checks.VariableDeclarationsCheck" />
             <description>%VariableDeclarations.desc</description>
             <property-metadata name="max" datatype="Integer" default-value="0">
@@ -27,7 +27,15 @@
             <alternative-name internal-name="net.sf.eclipsecs.sample.checks.LoopingStatementsCheck" />
             <description>%VariableDeclarations.desc</description>
             <property-metadata name="max" datatype="Integer" default-value="0">
-                <description>The maximum number of variable declarations.</description>
+                <description>The maximum number of looping statements.</description>
+            </property-metadata>
+        </rule-metadata>
+        
+        <rule-metadata name="%CastsCheck.name" internal-name="Casts" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.CastsCheck" />
+            <description>%CastsCheck.desc</description>
+            <property-metadata name="max" datatype="Integer" default-value="0">
+                <description>The maximum number of casts.</description>
             </property-metadata>
         </rule-metadata>
         

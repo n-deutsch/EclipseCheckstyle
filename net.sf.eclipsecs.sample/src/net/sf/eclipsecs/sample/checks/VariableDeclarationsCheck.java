@@ -7,10 +7,11 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 public class VariableDeclarationsCheck extends AbstractCheck {
 
   private int max = 0;
+  private int variableCount = 0;
 
   @Override
   public int[] getAcceptableTokens() {
-    return new int[] { TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF };
+    return new int[] { TokenTypes.VARIABLE_DEF };
   }
 
   @Override
@@ -20,7 +21,7 @@ public class VariableDeclarationsCheck extends AbstractCheck {
 
   @Override
   public int[] getDefaultTokens() {
-    return new int[] { TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF };
+    return new int[] { TokenTypes.VARIABLE_DEF };
   }
 
   public void setMax(int limit) {
@@ -29,32 +30,9 @@ public class VariableDeclarationsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    /* find the OBJBLOCK node below the CLASS_DEF/INTERFACE_DEF
-    DetailAST objBlock = ast.findFirstToken(TokenTypes.OBJBLOCK);
-    // count the number of direct children of the OBJBLOCK
-    // that are METHOD_DEFS
-    int methodDefs = objBlock.getChildCount(TokenTypes.METHOD_DEF);
-    // report error if limit is reached
-    if (methodDefs > max) {
-      log(ast.getLineNo(), "methodlimit", max);
-    }*/
-    //DetailAST objBlock = ast.findFirstToken(TokenTypes.)
-    //if(ast.getType() == TokenTypes.VARIABLE_DEF)
-    //{
-    // max++;
-    //log(ast.getLineNo(),"variableDeclaration",max);
-    //}
-    //DetailAST fieldDef = ast.findFirstToken(TokenTypes.IDENT);
+    variableCount++;
     
-    //WHAT A MESS
-    // find the OBJBLOCK node below the CLASS_DEF/INTERFACE_DEF
-    DetailAST objBlock = ast.findFirstToken(TokenTypes.IDENT);
-    // count the number of direct children of the OBJBLOCK
-    // that are METHOD_DEFS
-    int methodDefs = objBlock.getChildCount(TokenTypes.VARIABLE_DEF);
-    // report error if limit is reached
-    if (methodDefs > max) {
-      log(ast.getLineNo(), "variabledeclaration", max);
-    }
+    String message = "Maximum number of variable declarations: " + this.max;
+    log(ast.getLineNo(), message);
   }
 }

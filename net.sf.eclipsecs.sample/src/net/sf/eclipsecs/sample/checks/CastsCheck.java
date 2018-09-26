@@ -7,10 +7,11 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 public class CastsCheck extends AbstractCheck {
 
   private int max = 0;
+  private int castsCount = 0;
 
   @Override
   public int[] getAcceptableTokens() {
-    return new int[] { TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF };
+    return new int[] { TokenTypes.TYPECAST };
   }
 
   @Override
@@ -20,7 +21,7 @@ public class CastsCheck extends AbstractCheck {
 
   @Override
   public int[] getDefaultTokens() {
-    return new int[] { TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF };
+    return new int[] { TokenTypes.TYPECAST };
   }
 
   public void setMax(int limit) {
@@ -29,14 +30,12 @@ public class CastsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    // find the OBJBLOCK node below the CLASS_DEF/INTERFACE_DEF
-    //DetailAST objBlock = ast.findFirstToken(TokenTypes.);
-    // count the number of direct children of the OBJBLOCK
-    // that are METHOD_DEFS
-    //int methodDefs = objBlock.getChildCount(TokenTypes.);
-    // report error if limit is reached
-    //if (methodDefs > max) {
-      //log(ast.getLineNo(), "methodlimit", max);
-    //}
+    
+    castsCount++;
+    
+    String message = "Maximum number of casts: " + this.max;
+    log(ast.getLineNo(), message);
+    
+    return;
   }
 }

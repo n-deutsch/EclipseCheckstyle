@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 public class LoopingStatementsCheck extends AbstractCheck {
 
   private int max = 0;
-  private int num_looping_statements = 0;
+  private int loopingStatementCount = 0;
 
   @Override
   public int[] getAcceptableTokens() {
@@ -30,13 +30,9 @@ public class LoopingStatementsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    String d = ast.toStringList();
-    num_looping_statements++;
+    loopingStatementCount++;
     
-    String message = "only " + this.max + " looping statements are allowed";
+    String message = "Maximum number of looping statements: " + this.max;
     log(ast.getLineNo(), message);
-    
-    int pie = 69;
-    d = d + pie;
   }
 }

@@ -16,14 +16,19 @@
             <message key="methodlimit" value="Man, only {0} methods allowed." />
         </module>
         
-        <module name="VariableDeclarations">
+        <module name="net.sf.eclipsecs.sample.checks.VariableDeclarationsCheck">
             <property name="max" value="1" />
-            <message key="VariableDeclaration" value="Man, only {0} declarations allowed." />
+            <message key="VariableDeclaration" value="Man, Number of variable declarations: {0}." />
         </module>
         
         <module name="net.sf.eclipsecs.sample.checks.LoopingStatementsCheck">
             <property name="max" value="1" />
-            <message key="LoopingStatements" value="Man, only {0} looping statements allowed." />
+            <message key="LoopingStatements" value="Man, Number of looping statements: {0}." />
+        </module>
+        
+        <module name="net.sf.eclipsecs.sample.checks.CastsCheck">
+            <property name="max" value="1" />
+            <message key="CastsCount" value="Man, Number of casts: {0}." />
         </module>
         
         <!-- <module name="LineLength"> <property name="max" value="${maxLineLength}"/> </module> -->
