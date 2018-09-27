@@ -1,17 +1,17 @@
-package net.sf.eclipsecs.sample.checks;
+/*package net.sf.eclipsecs.sample.checks;
 
 import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 
-//counts the total number of casts
-public class CastsCheck extends AbstractCheck {
+//counts the total number of expressions
+public class CommentCheck extends AbstractCheck {
 
-  private int castsCount = 0;
-  
+  private int commentCount = 0;
+
   @Override
   public int[] getAcceptableTokens() {
-    return new int[] { TokenTypes.TYPECAST };
+    return new int[] { TokenTypes.SINGLE_LINE_COMMENT, TokenTypes.BLOCK_COMMENT_END };
   }
 
   @Override
@@ -21,17 +21,18 @@ public class CastsCheck extends AbstractCheck {
 
   @Override
   public int[] getDefaultTokens() {
-    return new int[] { TokenTypes.TYPECAST };
+    return new int[] { TokenTypes.SINGLE_LINE_COMMENT, TokenTypes.BLOCK_COMMENT_END };
   }
 
   @Override
   public void visitToken(DetailAST ast) {
-    castsCount++;
+    commentCount++;
   }
   
   @Override
   public void finishTree(DetailAST ast) {
-    String message = "Number of casts: " + this.castsCount;
-    log(ast.getLineNo(), message);
+    log(ast.getLineNo(), "Number of comments: " + this.commentCount);
+    commentCount = 0;
   }
 }
+*/

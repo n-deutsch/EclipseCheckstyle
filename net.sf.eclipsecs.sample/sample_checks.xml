@@ -16,31 +16,17 @@
             <message key="methodlimit" value="Man, only {0} methods allowed." />
         </module>
         
-        <module name="net.sf.eclipsecs.sample.checks.VariableDeclarationsCheck">
-            <property name="max" value="1" />
-            <message key="VariableDeclaration" value="Man, Number of variable declarations: {0}." />
-        </module>
+        <module name="net.sf.eclipsecs.sample.ExpressionsCheck"></module>
         
-        <module name="net.sf.eclipsecs.sample.checks.LoopingStatementsCheck">
-            <property name="max" value="1" />
-            <message key="LoopingStatements" value="Man, Number of looping statements: {0}." />
-        </module>
+        <module name="net.sf.eclipsecs.sample.CastsCheck"></module>
         
-        <module name="net.sf.eclipsecs.sample.checks.CastsCheck">
-            <property name="max" value="1" />
-            <message key="CastsCount" value="Man, Number of casts: {0}." />
-        </module>
+        <module name="net.sf.eclipsecs.sample.LoopingStatementsCheck"></module>
         
-        <module name="net.sf.eclipsecs.sample.checks.ExpressionsCheck">
-            <property name="max" value="1" />
-            <message key="ExpressionsCount" value="Man, Number of expressions: {0}." />
-        </module>
+        <module name="net.sf.eclipsecs.sample.VariableDeclarationsCheck"></module>
         
-        <module name="net.sf.eclipsecs.sample.checks.HalsteadEffortCheck">
-        </module>
+        <module name="net.sf.eclipsecs.sample.CommentsCheck"></module>
         
-        <module name="net.sf.eclipsecs.sample.checks.MaintainabilityIndexCheck">
-        </module>
+        <module name="net.sf.eclipsecs.sample.CommentLinesCheck"></module>
         
         <!-- <module name="LineLength"> <property name="max" value="${maxLineLength}"/> </module> -->
 

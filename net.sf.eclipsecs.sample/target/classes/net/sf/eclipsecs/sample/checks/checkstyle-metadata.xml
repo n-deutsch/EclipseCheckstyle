@@ -15,46 +15,34 @@
             <quickfix classname="net.sf.eclipsecs.sample.checks.MethodLimitQuickfix" />
         </rule-metadata>
         
-        <rule-metadata name="%VariableDeclarations.name" internal-name="VariableDeclarations" parent="TreeWalker">
-            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.VariableDeclarationsCheck" />
-            <description>%VariableDeclarations.desc</description>
-            <property-metadata name="max" datatype="Integer" default-value="0">
-                <description>The maximum number of variable declarations.</description>
-            </property-metadata>
+        <rule-metadata name="Expressions Check" internal-name="ExpressionsCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.ExpressionsCheck" />
+            <description>Counts the number of expressions</description>
         </rule-metadata>
         
-        <rule-metadata name="LoopingStatements" internal-name="LoopingStatements" parent="TreeWalker">
+        <rule-metadata name="Casts Check" internal-name="CastsCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.CastsCheck" />
+            <description>Counts the number of casts</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Looping Statements Check" internal-name="LoopingStatementsCheck" parent="TreeWalker">
             <alternative-name internal-name="net.sf.eclipsecs.sample.checks.LoopingStatementsCheck" />
-            <description>%VariableDeclarations.desc</description>
-            <property-metadata name="max" datatype="Integer" default-value="0">
-                <description>The maximum number of looping statements.</description>
-            </property-metadata>
+            <description>Counts the number of looping statements</description>
         </rule-metadata>
         
-        <rule-metadata name="%CastsCheck.name" internal-name="Casts" parent="TreeWalker">
-            <alternative-name internal-name="net.sf.eclipsecs.sample.CastsCheck" />
-            <description>%CastsCheck.desc</description>
-            <property-metadata name="max" datatype="Integer" default-value="0">
-                <description>The maximum number of casts.</description>
-            </property-metadata>
+        <rule-metadata name="Variable Declarations Check" internal-name="VariableDeclarationsCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.VariableDeclarationsCheck" />
+            <description>Counts the number of looping statements</description>
         </rule-metadata>
         
-        <rule-metadata name="%ExpressionsCheck.name" internal-name="Expressions" parent="TreeWalker">
-            <alternative-name internal-name="net.sf.eclipsecs.sample.ExpressionsCheck" />
-            <description>%ExpressionsCheck.desc</description>
-            <property-metadata name="max" datatype="Integer" default-value="0">
-                <description>The maximum number of Expressions.</description>
-            </property-metadata>
+        <rule-metadata name="Comments Check" internal-name="CommentsCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.CommentsCheck" />
+            <description>Counts the number of comments</description>
         </rule-metadata>
         
-        <rule-metadata name="%HalsteadEffortCheck.name" internal-name="HalsteadEffort" parent="TreeWalker">
-            <alternative-name internal-name="net.sf.eclipsecs.sample.HalsteadEffortCheck" />
-            <description>%HalsteadEffortCheck.desc</description>
-        </rule-metadata>
-        
-        <rule-metadata name="%MaintainabilityIndexCheck.name" internal-name="MaintainabilityIndex" parent="TreeWalker">
-            <alternative-name internal-name="net.sf.eclipsecs.sample.MaintainabilityIndexCheck" />
-            <description>%MaintainabilityIndexCheck.desc</description>
+        <rule-metadata name="Comment Lines Check" internal-name="CommentLinesCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.CommentLinesCheck" />
+            <description>Counts the number of lines of comments</description>
         </rule-metadata>
         
     </rule-group-metadata>
