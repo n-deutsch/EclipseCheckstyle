@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 //counts the total number of variable declarations
 public class CommentsCheck extends AbstractCheck {
 
-  private int commentsCount = 0;
+  private int commentsCount = 0; //default counter is zero
 
   @Override
   public int[] getAcceptableTokens() {
@@ -24,6 +24,7 @@ public class CommentsCheck extends AbstractCheck {
     return new int[] { TokenTypes.BLOCK_COMMENT_BEGIN, TokenTypes.SINGLE_LINE_COMMENT };
   }
 
+  //necessary override so the tree visits comment nodes
   @Override
   public boolean isCommentNodesRequired() {
     return true;
@@ -31,12 +32,15 @@ public class CommentsCheck extends AbstractCheck {
   
   @Override
   public void visitToken(DetailAST ast) {
+    //increase comments
     commentsCount++;
   }
   
   @Override
   public void finishTree(DetailAST ast) {
+    //display # of comments to the user
     String message = "Number of comments: " + this.commentsCount;
     log(ast.getLineNo(), message);
+    commentsCount = 0;
   }
 }

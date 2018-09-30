@@ -45,5 +45,55 @@
             <description>Counts the number of lines of comments</description>
         </rule-metadata>
         
+        <rule-metadata name="Halstead Difficulty Check" internal-name="HalsteadDifficultyCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.HalsteadDifficultyCheck" />
+            <description>Calculates the Halstead Difficulty</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Halstead Volume Check" internal-name="HalsteadVolumeCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.HalsteadVolumeCheck" />
+            <description>Calculates the Halstead Volume</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Operand Count Check" internal-name="OperandCountCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.OperandCountCheck" />
+            <description>Counts the number of operands</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Operator Count Check" internal-name="OperatorCountCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.OperatorCountCheck" />
+            <description>Counts the number of operators</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Local Method References Check" internal-name="LocalMethodCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.LocalMethodCheck" />
+            <description>Counts the number of local method references</description>
+        </rule-metadata>
+        
+        <rule-metadata name="External Method References Check" internal-name="ExternalMethodCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.ExternalMethodCheck" />
+            <description>Counts the number of external method references</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Halstead Length Check" internal-name="HalsteadLengthCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.HalsteadLengthCheck" />
+            <description>Calculates the Halstead length</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Halstead Vocabulary Check" internal-name="HalsteadVocabularyCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.HalsteadVocabularyCheck" />
+            <description>Calculates the Halstead vocabulary</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Halstead Effort Check" internal-name="HalsteadEffortCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.HalsteadEffortCheck" />
+            <description>Calculates the Halstead effort</description>
+        </rule-metadata>
+        
+        <rule-metadata name="Maintainability Index Check" internal-name="MaintainabilityIndexCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.MaintainabilityIndexCheck" />
+            <description>Calculates the maintainability index</description>
+        </rule-metadata>
+        
     </rule-group-metadata>
 </checkstyle-metadata>

@@ -1,6 +1,5 @@
 package net.sf.eclipsecs.sample.checks;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.stream.IntStream;
 
@@ -8,18 +7,17 @@ import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 
-//calculates the Halstead difficulty
-public class HalsteadEffortCheck extends AbstractCheck {
-  
-  public static final String MSG_KEY = "HalsteadDifficulty";
+//calculates the halstead volume
+public class HalsteadVolumeCheck extends AbstractCheck {
+
+  public static final String MSG_KEY = "HalsteadVolume";
   private static int MAX = 1;
   
   public void setMax(int max) {
     MAX = max;
   }
   
-  //is half of the unique operators multiplied by the total 
-  //number of operands, divided by the number of distinct operators
+  //program length (N) times the log2 of the program vocabulary (n)
   int[] operators = {
       TokenTypes.ASSIGN,
       TokenTypes.BAND,
@@ -116,21 +114,17 @@ public class HalsteadEffortCheck extends AbstractCheck {
       totaloperands++;
       foundoperands.add(type);
     }
-    if(foundoperands.size() > 0 && MAX <= (foundoperators.size()/2)*(totaloperands/foundoperands.size())){
-      //super.log(ast, "HalsteadDifficulty Exceeds Expected.",null);
+    if(MAX <= (totaloperators + totaloperands)* (Math.log(foundoperators.size()+foundoperands.size())/Math.log(2))){
+      //super.log(ast, "HalsteadVolume Exceeds Expected.",null);
     }
   }
   
-  @Override 
-  public void finishTree(DetailAST ast)
-  {
-    //calculate halstead difficulty
-    double HalsteadDifficulty = (foundoperators.size() / 2) * (totaloperands / foundoperands.size());
-    double HalsteadVolume = (totaloperators + totaloperands)* (Math.log(foundoperators.size()+foundoperands.size())/Math.log(2));
+  @Override
+  public void finishTree(DetailAST ast) {
+    double halsteadVolume = (totaloperators + totaloperands)* (Math.log(foundoperators.size()+foundoperands.size())/Math.log(2));
+    String message = "Halstead Volume: " + halsteadVolume;
     
-    double HalsteadEffort = HalsteadDifficulty * HalsteadVolume;
-    String message = "Halstead Effort: " + HalsteadEffort;
-    //display halstead difficulty
+  //display halstead difficulty
     log(ast.getLineNo(), message);
     
     //reset operands, operators

@@ -9,7 +9,7 @@ import com.puppycrawl.tools.checkstyle.api.DetailAST;
 import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 
 //calculates the Halstead difficulty
-public class HalsteadEffortCheck extends AbstractCheck {
+public class HalsteadDifficultyCheck extends AbstractCheck {
   
   public static final String MSG_KEY = "HalsteadDifficulty";
   private static int MAX = 1;
@@ -126,10 +126,7 @@ public class HalsteadEffortCheck extends AbstractCheck {
   {
     //calculate halstead difficulty
     double HalsteadDifficulty = (foundoperators.size() / 2) * (totaloperands / foundoperands.size());
-    double HalsteadVolume = (totaloperators + totaloperands)* (Math.log(foundoperators.size()+foundoperands.size())/Math.log(2));
-    
-    double HalsteadEffort = HalsteadDifficulty * HalsteadVolume;
-    String message = "Halstead Effort: " + HalsteadEffort;
+    String message = "Halstead Difficulty: " + HalsteadDifficulty;
     //display halstead difficulty
     log(ast.getLineNo(), message);
     
@@ -140,3 +137,4 @@ public class HalsteadEffortCheck extends AbstractCheck {
     foundoperators = new HashSet<Integer>();
   }
 }
+

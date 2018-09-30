@@ -28,6 +28,26 @@
         
         <module name="net.sf.eclipsecs.sample.CommentLinesCheck"></module>
         
+        <module name="net.sf.eclipsecs.sample.HalsteadDifficultyCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.HalsteadVolumeCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.OperandCountCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.OperatorCountCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.LocalMethodCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.ExternalMethodCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.HalsteadLengthCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.HalsteadVocabularyCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.HalsteadEffortCheck"></module>
+        
+        <module name="net.sf.eclipsecs.sample.MaintainabilityIndexCheck"></module>
+        
         <!-- <module name="LineLength"> <property name="max" value="${maxLineLength}"/> </module> -->
 
         <module name="Regexp">

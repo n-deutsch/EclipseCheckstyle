@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 //counts the total number of casts
 public class CastsCheck extends AbstractCheck {
 
-  private int castsCount = 0;
+  private int castsCount = 0; //integer that keeps track of TYPECASTs
   
   @Override
   public int[] getAcceptableTokens() {
@@ -26,12 +26,14 @@ public class CastsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    castsCount++;
+    castsCount++; //increase counter
   }
   
   @Override
   public void finishTree(DetailAST ast) {
+    //display number of casts to the user
     String message = "Number of casts: " + this.castsCount;
     log(ast.getLineNo(), message);
+    castsCount = 0;
   }
 }

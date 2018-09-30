@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 //counts total number of expressions
 public class ExpressionsCheck extends AbstractCheck {
 
-  private int expressionCount = 0;
+  private int expressionsCount = 0; //default to zero
   
   @Override
   public int[] getAcceptableTokens() {
@@ -26,12 +26,14 @@ public class ExpressionsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    expressionCount++;
+    expressionsCount++; //increase # of expressions
   }
   
   @Override
   public void finishTree(DetailAST ast) {
-    String message = "Number of expressions: " + this.expressionCount;
+    //display the number of expressions
+    String message = "Number of expressions: " + this.expressionsCount;
     log(ast.getLineNo(), message);
+    expressionsCount = 0;
   }
 }

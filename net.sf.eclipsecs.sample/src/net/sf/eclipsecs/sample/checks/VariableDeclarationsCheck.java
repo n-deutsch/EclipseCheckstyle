@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 //counts the total number of variable declarations
 public class VariableDeclarationsCheck extends AbstractCheck {
 
-  private int declarationCount = 0;
+  private int declarationsCount = 0; //default counter is zero
 
   @Override
   public int[] getAcceptableTokens() {
@@ -26,12 +26,16 @@ public class VariableDeclarationsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
-    declarationCount++;
+    declarationsCount++; //increase counter by one
   }
   
   @Override
   public void finishTree(DetailAST ast) {
-    String message = "Number of variable declarations: " + this.declarationCount;
+    //display number of variable declarations to user
+    String message = "Number of variable declarations: " + this.declarationsCount;
     log(ast.getLineNo(), message);
+    
+    //reset counter
+    declarationsCount = 0;
   }
 }

@@ -7,7 +7,7 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 //counts number of looping statements
 public class LoopingStatementsCheck extends AbstractCheck {
 
-  private int loopingStatements = 0;
+  private int loopingStatements = 0; //default counter is zero
   
   @Override
   public int[] getAcceptableTokens() {
@@ -26,12 +26,17 @@ public class LoopingStatementsCheck extends AbstractCheck {
 
   @Override
   public void visitToken(DetailAST ast) {
+    //increase counter
     loopingStatements++;
   }
   
   @Override
   public void finishTree(DetailAST ast) {
+    //display # looping statements to user
     String message = "Number of looping statements: " + this.loopingStatements;
     log(ast.getLineNo(), message);
+    
+    //reset counter
+    loopingStatements = 0;
   }
 }
