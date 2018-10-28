@@ -9,6 +9,14 @@ public class LoopingStatementsCheck extends AbstractCheck {
 
   private int loopingStatements = 0; //default counter is zero
   
+  public int getLoopingStatements() {
+    return loopingStatements;
+  }
+  
+  public void setLoopingStatements(int numLoops) {
+    loopingStatements = numLoops;
+  }
+  
   @Override
   public int[] getAcceptableTokens() {
     return new int[] { TokenTypes.LITERAL_WHILE, TokenTypes.LITERAL_FOR, TokenTypes.LITERAL_DO };
